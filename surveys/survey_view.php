@@ -84,6 +84,8 @@ if($myResult->isValid)
 	echo "Survey Description: " . $myResult->Description . "<br />";
 	$myResult->showGraph() . "<br />";	//showTallies method shows all questions, answers and tally totals!
 	responseList($myID);
+	echo '<br /><a href="survey_take.php?SurveyID=' . $myID . '">Take Survey Again!</a>';
+	
 	unset($myResult);  //destroy object & release resources
 }else{
 		if($mySurvey->isValid)
@@ -92,6 +94,8 @@ if($myResult->isValid)
 			echo $mySurvey->Title . "<br />";
 			echo $mySurvey->Description . "<br />";
 			$mySurvey->showQuestions();
+			echo '<br /><a href="survey_take.php?SurveyID=' . $myID . '">Take Survey Again!</a>';
+	
 			//responseList($myID);
 			echo 'No results so far';
 		}else{
